@@ -4,7 +4,6 @@ from central.models import *
 
 app = Flask(__name__)
 
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/product.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://usuario:password@localhost/central?charset=utf8mb4'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:mysql2@localhost/central?charset=utf8mb4'
 
 db = SQLAlchemy(app)
