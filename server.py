@@ -9,4 +9,4 @@ def welcome_to_home():
 
 if __name__ == "__main__":
     #db.create_all()
-    app.run(port=3000, host="localhost")
+    app.run(port=3000, host="localhost", debug=True)
