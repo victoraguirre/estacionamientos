@@ -68,8 +68,10 @@ def list_reservas():
 def list_reservas_placa():
     json = request.get_json()
     placa = json.get("placa")
+    #distrito = json.get("distrito")
 
     reservas = Reserva.query.filter_by(numero_placa_vehiculo=placa).all()
+    #playas = Playa.query.filter_by(distrito=distrito).all()
     """
     return jsonify({
             "items": [{"codigo_reserva": x.codigo_reserva, "placa": x.numero_placa_vehiculo} for x in reservas]
@@ -77,7 +79,7 @@ def list_reservas_placa():
     """
 
     #Crear variable data de acuerdo al modelo del detalle, este se enviará al modelo pandas para ser analizado
-    data = [{"codigo_reserva": x.codigo_reserva, "placa": x.numero_placa_vehiculo} for x in reservas]
+    data = [{"codigo_reserva": x.codigo_reserva, "placa": x.numero_placa_vehiculo, "espacio": x.espacio_asignado} for x in reservas]
     #print(data)
 
     #Tener el tipo de cliente del usuario, ejemplo 1=Eventual, 2=Frecuente, 3=Abonado

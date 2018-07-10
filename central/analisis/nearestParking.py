@@ -29,6 +29,12 @@ class NearestParking:
             #print(self.data)
             df = pd.DataFrame(self.data)
             df.describe()
+            promedio = df["espacio"].mean()
+            if promedio>40:
+                print('Este es el promedio= {} y merece promocion'.format(promedio))
+            else:
+                print('Se merece una patada por mal cliente')
+            print('Este es el promedio= {}'.format(promedio))
             print(df.describe())
             #Aca te loqueas con pandas
         #Si el cliente es frecuente, evaluar por tiempo promedio
